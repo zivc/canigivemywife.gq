@@ -31,9 +31,13 @@ app.get('*', function(req,res) {
 
 				[
 					{s:'title', f:'text'},
-					{s:'body', f:'html'}
+					{s:'body', f:'html'},
 				].forEach(function(thing) {
 					$(thing.s)[thing.f](bigReplace($(thing.s)[thing.f]()));
+				});
+
+				$('meta').each(function(i,ele) {
+					$(this).attr('content', bigReplace($(this).attr('content')));
 				});
 
 				$('a[href*="http://canigivemydog.com/"]').each(function(i,ele) {
