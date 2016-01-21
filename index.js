@@ -40,7 +40,7 @@ app.get('*', function(req,res) {
 					$(this).attr('href', $(this).attr('href').replace('canigivemydog.com', req.headers.host));
 				});
 
-				$('body').append('<style type="text/css">#header { background-image:url("/img/logo.png"); }</style>');
+				$('body').prepend('<style type="text/css">#header { background-image:url("/img/logo.png") !important; }</style>');
 
 				res.send($.html());
 			}
